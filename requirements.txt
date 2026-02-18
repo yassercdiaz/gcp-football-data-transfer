@@ -1,0 +1,4 @@
+google-cloud-storage==3.9.0
+google-cloud-bigquery==3.40.1
+pandas==2.2.0
+python-dotenv==1.0.0

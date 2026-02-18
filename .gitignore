@@ -1,0 +1,40 @@
+# Ignore files containing sensitive information
+*.json
+*credentials*
+*key*
+*service-account*
+.env
+config.py
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+*.egg-info/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# dbt
+target/
+dbt_packages/
+logs/
+profiles.yml
+
+# IDE
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.bak
+~$*

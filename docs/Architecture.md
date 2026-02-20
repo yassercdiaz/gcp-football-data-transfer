@@ -5,65 +5,65 @@
 ### Current Implementation 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                         LOCAL ENVIRONMENT                        │
+│                         LOCAL ENVIRONMENT                       │
 ├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│  ┌──────────────┐           ┌─────────────────────────────┐    │
-│  │  clubs.csv   │  ────────▶│  Python Scripts             │    │
-│  │  (451 clubs) │           │  - 01_upload_to_gcs.py      │    │
-│  └──────────────┘           │  - 02_load_to_bigquery.py   │    │
-│                              └─────────────────────────────┘    │
-│                                          │                       │
-└──────────────────────────────────────────┼───────────────────────┘
+│                                                                 │
+│  ┌──────────────┐           ┌─────────────────────────────┐     │
+│  │  clubs.csv   │ ────────> │  Python Scripts             │     │
+│  │  (451 clubs) │           │  - 01_upload_to_gcs.py      │     │
+│  └──────────────┘           │  - 02_load_to_bigquery.py   │     │
+│                             └─────────────────────────────┘     │
+│                                          │                      │
+└──────────────────────────────────────────┼──────────────────────┘
                                            │
                                            │ Upload via 
                                            │ google-cloud-storage
                                            ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                      GOOGLE CLOUD PLATFORM                       │
+│                      GOOGLE CLOUD PLATFORM                      │
 ├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│  ┌────────────────────────────────────────────────────────┐    │
-│  │              CLOUD STORAGE (GCS)                       │    │
-│  │  Bucket: gcp-football-clubs-data-2025                  │    │
-│  │                                                         │    │
-│  │  └── raw/                                              │    │
-│  │       └── clubs.csv (Source of Truth)                  │    │
-│  └────────────────────────────────────────────────────────┘    │
-│                           │                                      │
-│                           │ Load via                             │
-│                           │ google-cloud-bigquery                │
-│                           ▼                                      │
-│  ┌────────────────────────────────────────────────────────┐    │
-│  │                   BIGQUERY                              │    │
-│  │  Dataset: football_transfer_raw                         │    │
-│  │                                                         │    │
-│  │  Tables:                                               │    │
-│  │  └── clubs (451 rows, 17 columns)                      │    │
-│  │                                                         │    │
-│  │  Schema:                                               │    │
-│  │  - club_id (STRING)                                    │    │
-│  │  - name (STRING)                                       │    │
-│  │  - stadium_seats (INT64)                               │    │
-│  │  - squad_size (INT64)                                  │    │
-│  │  - average_age (FLOAT64)                               │    │
-│  │  - foreigners_percentage (FLOAT64)                     │    │
-│  │  - net_transfer_record (STRING) ← needs cleaning       │    │
-│  │  - ... (10 more columns)                               │    │
-│  └────────────────────────────────────────────────────────┘    │
-│                           │                                      │
-│                           │ Query via                            │
-│                           │ BigQuery Console / SQL               │
-│                           ▼                                      │
-│  ┌────────────────────────────────────────────────────────┐    │
-│  │              SQL ANALYTICS (Queries)                    │    │
-│  │                                                         │    │
-│  │  - Exploratory queries                                 │    │
-│  │  - Aggregations and rankings                           │    │
-│  │  - Data quality checks                                 │    │
-│  │  - Transformation logic                                │    │
-│  └────────────────────────────────────────────────────────┘    │
-│                                                                  │
+│                                                                 │
+│  ┌────────────────────────────────────────────────────────┐     │
+│  │              CLOUD STORAGE (GCS)                       │     │
+│  │  Bucket: gcp-football-clubs-data-2025                  │     │
+│  │                                                        │     │
+│  │  └── raw/                                              │     │
+│  │       └── clubs.csv (Source of Truth)                  │     │
+│  └────────────────────────────────────────────────────────┘     │
+│                           │                                     │
+│                           │ Load via                            │
+│                           │ google-cloud-bigquery               │
+│                           ▼                                     │
+│  ┌────────────────────────────────────────────────────────┐     │
+│  │                   BIGQUERY                             │     │
+│  │  Dataset: football_transfer_raw                        │     │
+│  │                                                        │     │
+│  │  Tables:                                               │     │
+│  │  └── clubs (451 rows, 17 columns)                      │     │
+│  │                                                        │     │
+│  │  Schema:                                               │     │
+│  │  - club_id (STRING)                                    │     │
+│  │  - name (STRING)                                       │     │
+│  │  - stadium_seats (INT64)                               │     │
+│  │  - squad_size (INT64)                                  │     │
+│  │  - average_age (FLOAT64)                               │     │
+│  │  - foreigners_percentage (FLOAT64)                     │     │
+│  │  - net_transfer_record (STRING) ← needs cleaning       │     │
+│  │  - ... (10 more columns)                               │     │
+│  └────────────────────────────────────────────────────────┘     │
+│                           │                                     │
+│                           │ Query via                           │
+│                           │ BigQuery Console / SQL              │
+│                           ▼                                     │
+│  ┌────────────────────────────────────────────────────────┐     │
+│  │              SQL ANALYTICS (Queries)                   │     │
+│  │                                                        │     │
+│  │  - Exploratory queries                                 │     │
+│  │  - Aggregations and rankings                           │     │
+│  │  - Data quality checks                                 │     │
+│  │  - Transformation logic                                │     │
+│  └────────────────────────────────────────────────────────┘     │
+│                                                                 │
 └─────────────────────────────────────────────────────────────────┘
 ```
 

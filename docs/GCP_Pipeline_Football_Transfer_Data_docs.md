@@ -13,6 +13,7 @@ Local CSV File (clubs.csv)
         ↓
   SQL Analytics (Queries)
 ```
+For detailed architecture documentation, see [docs/Architecture.md](docs/Architecture.md)
 
 ## 📚 Key Concepts Learned
 

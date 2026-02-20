@@ -28,14 +28,6 @@ Local CSV → Cloud Storage → BigQuery → dbt → Looker Studio
 └── docs/              # Documentation
 ```
 
-## 🚀 Progress
-- [x] Week 1 - Day 1: GCP Setup
-- [x] Week 1 - Day 2: Cloud Storage + BigQuery
-- [ ] Week 1 - Day 3: Python Automation
-- [ ] Week 2: SQL Transformations
-- [ ] Week 3: dbt Core
-- [ ] Week 4: Data Visualization
-
 ## 🛠️ Technologies
 - Google Cloud Platform
 - Python 3.11

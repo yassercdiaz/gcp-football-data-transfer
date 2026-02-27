@@ -9,6 +9,7 @@ SELECT
   club_id,
   TRIM(name) as club_name,
   club_code,
+  domestic_competition_id,
   
   -- Stadium information
   TRIM(stadium_name) as stadium_name,

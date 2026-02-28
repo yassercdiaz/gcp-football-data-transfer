@@ -6,7 +6,8 @@ CREATE OR REPLACE TABLE `gcp-football-data-transfer.football_marts.clubs_analyti
 
 WITH club_metrics AS (
   SELECT
-    domestic_competition_id, 
+    domestic_competition_id,
+    club_id, 
     club_name,
     stadium_name,
     stadium_seats,

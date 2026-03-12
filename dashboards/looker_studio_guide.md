@@ -127,11 +127,3 @@ END
 5. **Belgian clubs have 0% net buyers (pure development model)**
 
 ---
-
-## 🚀 Next Steps (Week 4)
-
-In Week 4, we'll:
-- Build the actual Looker Studio dashboard
-- Add filters and interactivity
-- Create drill-through reports
-- Schedule automatic data refreshes with Cloud Scheduler

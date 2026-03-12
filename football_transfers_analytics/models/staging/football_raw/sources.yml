@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: football_raw
+    description: Raw football data from Kaggle
+    database: gcp-football-data-transfer
+    schema: football_transfer_raw
+    
+    tables:
+      - name: clubs
+        description: Raw club data with 451 football clubs
